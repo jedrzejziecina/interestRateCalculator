@@ -28,10 +28,10 @@ public class Main {
         int result = JOptionPane.showConfirmDialog(null, myPanel,
                 "Kalkulator planu inwestycyjnego", JOptionPane.OK_CANCEL_OPTION);
         if (result == JOptionPane.OK_OPTION) {
-            Double percentage = Double.parseDouble(taxField.getText());
-            Double bonus = Double.parseDouble(rateField.getText());
+            double percentage = Double.parseDouble(taxField.getText());
+            double bonus = Double.parseDouble(rateField.getText());
             int n = Integer.parseInt(monthsField.getText());
-            Double k = Double.parseDouble(goldField.getText());
+            double k = Double.parseDouble(goldField.getText());
             double r = (bonus/100)/12;
             double p = percentage/100;
 
