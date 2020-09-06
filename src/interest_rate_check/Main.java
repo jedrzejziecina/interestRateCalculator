@@ -7,15 +7,12 @@ public class Main {
     public static void main(String[] args) {
 
         //dane
-        JTextField taxField = new JTextField(5);
         JTextField rateField = new JTextField(5);
         JTextField monthsField = new JTextField(5);
         JTextField goldField = new JTextField(5);
 
         JPanel myPanel = new JPanel();
-        myPanel.add(new JLabel("Podatek:"));
-        myPanel.add(taxField);
-        myPanel.add(Box.createHorizontalStrut(5)); // a spacer
+
         myPanel.add(new JLabel("Oprocentowanie:"));
         myPanel.add(rateField);
         myPanel.add(Box.createHorizontalStrut(5)); // a spacer
@@ -28,7 +25,7 @@ public class Main {
         int result = JOptionPane.showConfirmDialog(null, myPanel,
                 "Kalkulator planu inwestycyjnego", JOptionPane.OK_CANCEL_OPTION);
         if (result == JOptionPane.OK_OPTION) {
-            double percentage = Double.parseDouble(taxField.getText());
+            double percentage = 19;
             double bonus = Double.parseDouble(rateField.getText());
             int n = Integer.parseInt(monthsField.getText());
             double k = Double.parseDouble(goldField.getText());
@@ -59,6 +56,11 @@ public class Main {
             } else{
                 JOptionPane.showMessageDialog(null,"Cel: " + Math.round(k)+ " zł" + " \nOkres: " + n + " miesięcy " + "\nWysokość wpłaty: " + sValue + " zł" + "\n\nPrzewidywane środki: " + kValue + " zł");
             }
+        }else if (result == JOptionPane.CANCEL_OPTION)
+        {
+            JOptionPane.showMessageDialog(null,"Anulowano użycie programu.");
+        }else {
+            JOptionPane.showMessageDialog(null,"Zamknięto kalkulator.");
         }
 
     }
