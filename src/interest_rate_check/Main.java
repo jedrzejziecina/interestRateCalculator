@@ -32,7 +32,7 @@ public class Main {
             double r = (bonus/100)/12;
             double p = percentage/100;
 
-            //wyliczenie 's' ze zmienionego wzoru
+            //wyliczenie 's'
             double up = k*r*(1-p);
             double pow = Math.pow(1 + r * (1 - p), n);
             double down = pow-1;
@@ -41,7 +41,7 @@ public class Main {
             double s = up/(down*side); // wyliczenie 's'
             int sValue = (int) Math.round(s);// wyliczone 's'
 
-            //wyliczenie 'k' podstawiając dane do pierwotnego wzoru znając 's'
+            //wyliczenie 'k'
             double up2 = sValue* pow -sValue;
             double down2 = r*(1-p);
             double side2 = (1+r*(1-p));
